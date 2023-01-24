@@ -14,6 +14,19 @@ public class CourseServiceImpl implements CourseService{
 	@Autowired
 	CourseRepository courseRepository;
 	
+	@Override
+	public Course getCourseById(int id) {
+		
+		return courseRepository.getReferenceById(id);
+	}
+
+	@Override
+	public List<Course> getAllCourses() {
+		
+		return courseRepository.findAll();
+	}
+	
+	
 	
 	@Override
 	public Course addCourse(Course course) {
@@ -23,28 +36,25 @@ public class CourseServiceImpl implements CourseService{
 
 	@Override
 	public Course getCourseByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return courseRepository.getCourseByCourseName(name);
 	}
 
-	@Override
-	public Course getCourseById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Course> getAllCourses() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public List<Course> getCoursesByCategory(String category) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return courseRepository.getCourseByCategory(category);
 	}
 
 	
 	
 }
+
+
+
+
+
+
+
