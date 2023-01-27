@@ -10,11 +10,12 @@ import com.training.app.entity.Course;
 public interface CourseService {
 
 	public Course addCourse(Course course);
+	public List<Course> getAllCourses();
+	
+	// ----- specific methods , because of property name
+	public List<Course> getCoursesByCategory(String category);
 	public Course getCourseByName(String name);
 	public Course getCourseById(int id);
-	public List<Course> getAllCourses();
-	public List<Course> getCoursesByCategory(String category);
-	
 	
 	
 	
